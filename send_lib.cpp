@@ -4,12 +4,16 @@
 #include<cmath>
 
 namespace ARRC{
-    UDP* UDP::singleton_instance = nullptr;
+    /*UDP* UDP::singleton_instance = nullptr;
     UDP* UDP::getInstance(){
         if(singleton_instance == nullptr){
             singleton_instance = new UDP;
         }
         return singleton_instance;
+    }*/
+
+    UDP::UDP(std::string main_address){
+        Init(main_address);
     }
     void UDP::Init(std::string address){
         sock = socket(AF_INET, SOCK_DGRAM, 0);
